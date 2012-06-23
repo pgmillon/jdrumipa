@@ -21,35 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package net.ishtanzar.java.drupal;
+package org.drupal;
+
+import org.drupal.ModuleInfoParser;
+import java.util.List;
 
 /**
  *
  * @author pgmillon
  */
- public enum ModuleProperty {
-  DEPENDENCIES("dependencies") {
-    @Override
-    public IPropertyParser getParser(ModuleInfoParser parser) {
-      return new DependencyPropertyParser(parser);
-    }
-  };
-  
-  protected String name;
+class DependencyPropertyParser implements IPropertyParser {
 
-  private ModuleProperty(String name) {
-    this.name = name;
-  }
+  protected ModuleInfoParser parser;
 
-  public static ModuleProperty parse(String property) {
-    for (ModuleProperty enumProp : ModuleProperty.values()) {
-      if (enumProp.name.equals(property)) {
-        return enumProp;
-      }
-    }
-    return null;
+  public DependencyPropertyParser(ModuleInfoParser parser) {
+    this.parser = parser;
   }
   
-  public abstract IPropertyParser getParser(ModuleInfoParser parser);
+  public void parse(List<String> keys, String value) {
+    parser.getDependencies().add(value);
+  }
   
 }

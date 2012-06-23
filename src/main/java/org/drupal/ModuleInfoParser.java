@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package net.ishtanzar.java.drupal;
+package org.drupal;
 
 import java.io.*;
 import java.util.ArrayList;

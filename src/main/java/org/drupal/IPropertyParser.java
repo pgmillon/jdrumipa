@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package net.ishtanzar.java.drupal;
+package org.drupal;
 
 import java.util.List;
 
@@ -29,16 +29,8 @@ import java.util.List;
  *
  * @author pgmillon
  */
-class DependencyPropertyParser implements IPropertyParser {
-
-  protected ModuleInfoParser parser;
-
-  public DependencyPropertyParser(ModuleInfoParser parser) {
-    this.parser = parser;
-  }
+public interface IPropertyParser {
   
-  public void parse(List<String> keys, String value) {
-    parser.getDependencies().add(value);
-  }
+  public void parse(List<String> keys, String value);
   
 }

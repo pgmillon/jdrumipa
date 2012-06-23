@@ -1,8 +1,7 @@
-package net.ishtanzar.java.drupal.module_info_parser;
+package org.drupal;
 
 import java.io.File;
 import java.net.URL;
-import net.ishtanzar.java.drupal.ModuleInfoParser;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
